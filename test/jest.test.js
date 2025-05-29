@@ -4,3 +4,8 @@ test('Sample Test', () => {
     let sum = num1 + num2;
     expect(sum).toBe(15);
 });
+
+test('Deve ser um objeto', () => {
+    const obj = { name: 'John', age: 30 };
+    expect(obj).toEqual(expect.objectContaining({ name: 'John' }));
+});
