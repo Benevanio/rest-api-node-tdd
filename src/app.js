@@ -1,5 +1,12 @@
 const express = require('express');
 const app = express();
+const consig = require('consolidate');
+
+
+consig({cwd: 'src'})
+    .include('./config/middleware.js')
+    .into(app);
+
 
 app.use(express.json());
 app.get('/', (req, res) => {
